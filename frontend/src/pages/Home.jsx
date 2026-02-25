@@ -1,3 +1,4 @@
+// frontend/src/pages/Home.jsx
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -48,13 +49,14 @@ const Home = () => {
 
           <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
             <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              {/* Updated: Changed from currency symbol to a heart/hands icon for donation */}
               <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.121 15.536c-1.171 1.952-3.07 1.952-4.242 0-1.172-1.953-1.172-5.119 0-7.072 1.171-1.952 3.07-1.952 4.242 0M8 10.5h8m-4-7v3m-7 11h14M5 21h14" />
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2">Donate</h3>
             <p className="text-gray-600">
-              Your financial support helps us fund programs and reach more people in need.
+              Your financial support in GH₵ helps us fund programs and reach more people in need.
             </p>
           </div>
 
