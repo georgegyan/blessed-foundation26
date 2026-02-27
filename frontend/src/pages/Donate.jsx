@@ -1,3 +1,4 @@
+// frontend/src/pages/Donate.jsx
 import { useState } from 'react';
 import { donationsApi } from '../services/api';
 
@@ -42,7 +43,8 @@ const Donate = () => {
     }
   };
 
-  const predefinedAmounts = [10, 25, 50, 100, 500];
+  // Updated predefined amounts in Cedis
+  const predefinedAmounts = [20, 50, 100, 200, 300, 500];
 
   const setAmount = (amount) => {
     setFormData(prev => ({ ...prev, amount: amount.toString() }));
@@ -105,9 +107,9 @@ const Donate = () => {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-3">
-              Select Amount *
+              Select Amount (GH₵) *
             </label>
-            <div className="grid grid-cols-3 md:grid-cols-5 gap-3 mb-4">
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-3 mb-4">
               {predefinedAmounts.map((amt) => (
                 <button
                   key={amt}
@@ -119,16 +121,16 @@ const Donate = () => {
                       : 'border-gray-200 hover:border-primary-300 text-gray-700'
                   }`}
                 >
-                  ${amt}
+                  GH₵{amt}
                 </button>
               ))}
             </div>
             
             <label htmlFor="amount" className="block text-sm font-medium text-gray-700 mb-1">
-              Or Enter Custom Amount *
+              Or Enter Custom Amount (GH₵) *
             </label>
             <div className="relative">
-              <span className="absolute left-3 top-2 text-gray-500">$</span>
+              <span className="absolute left-3 top-2 text-gray-500">GH₵</span>
               <input
                 type="number"
                 id="amount"
@@ -138,7 +140,7 @@ const Donate = () => {
                 required
                 min="1"
                 step="0.01"
-                className="input-field pl-8"
+                className="input-field pl-14"
                 placeholder="50.00"
               />
             </div>
