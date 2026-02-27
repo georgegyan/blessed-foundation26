@@ -1,37 +1,56 @@
 services:
   db:
     image: postgres:15-alpine
-    container_name: blessed_foundation_db
+    container_name: blessed_foundation_db_prod
     environment:
-      - POSTGRES_DB=blessed_foundation
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER}"]
       interval: 10s
       timeout: 5s
       retries: 5
 
   web:
     build: .
-    container_name: blessed_foundation_web
+    container_name: blessed_foundation_web_web_prod
     command: >
       sh -c "python manage.py migrate &&
              python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
+      - .static_volume:/app/staticfiles
+      - .media_volume:/app/media
+      - .logs_volume:/app/logs
     ports:
       - "8000:8000"
     env_file:
       - .env
+      - .env.prod
     depends_on:
       db:
         condition: service_healthy
-    restart: unless-stopped
+    restart: always
+  nginx:
+    image: nginx:alpine
+    container_name: blessed_foundation_web_nginx_prod
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - .static_volume:/staticfiles
+      - .media_volume:/media
+    depends_on:
+      - web
+    restart: always
 
 volumes:
   postgres_data:
+  static_volume:
+  media_volume:
+  logs_volume:
