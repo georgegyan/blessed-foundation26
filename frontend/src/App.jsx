@@ -6,6 +6,7 @@ import About from './pages/About';
 import JoinUs from './pages/JoinUs';
 import Donate from './pages/Donate';
 import NotFound from './pages/NotFound';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/join-us" element={<JoinUs />} />
             <Route path="/donate" element={<Donate />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/admin" element={<AdminDashboard />} />
           </Routes>
         </Layout>
       </Router>

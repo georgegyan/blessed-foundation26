@@ -71,10 +71,15 @@ const About = () => {
             Our Mission
           </h2>
           <p className="text-gray-600 leading-relaxed">
-            To uplift underprivileged communities through sustainable development programs,
-            education, and healthcare initiatives. We believe in creating opportunities that
-            empower individuals to break the cycle of poverty and build better futures for
-            themselves and their families.
+           Blessed Foundation exists to demonstrate the love of Christ by empowering
+           disadvantaged communities and individuals through:
+            <ul className="list-disc list-inside mt-4 text-gray-600">
+                <li>Holistic support programs(education, health, and economic empowerment)</li>
+                <li>Community outreach and humanitarian aid</li>
+                <li>Advocating for social justice and equality</li>
+                <li>Mentorship, leadership development, and spiritual growth</li>
+                <li>Strategic partnerships that promote sustainable development</li>
+            </ul>
           </p>
         </div>
 
@@ -86,10 +91,10 @@ const About = () => {
             Our Vision
           </h2>
           <p className="text-gray-600 leading-relaxed">
-            A world where every individual has equal access to opportunities, resources,
-            and support needed to thrive. We envision communities where compassion drives
-            action, and collective effort creates sustainable positive change for generations
-            to come.
+            To build a transformed society where the vulnerable are empowered, women and 
+            children thrive with dignity, and communities are restored through faith, compassion,
+            and sustainable development. We envision a world where everyone has the opportunity to
+            reach their full potential and live a life of dignity and purpose.
           </p>
         </div>
       </div>
