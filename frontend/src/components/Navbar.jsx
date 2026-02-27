@@ -56,6 +56,9 @@ const Navbar = () => {
             <Link to="/donate" className={linkClasses('/donate')}>
               Donate
             </Link>
+            <Link to="/admin" className={linkClasses('/admin')}>
+              Admin
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -95,6 +98,9 @@ const Navbar = () => {
               </Link>
               <Link to="/donate" className={mobileLinkClasses('/donate')} onClick={() => setIsMenuOpen(false)}>
                 Donate
+              </Link>
+              <Link to="/admin" className={mobileLinkClasses('/admin')} onClick={() => setIsMenuOpen(false)}>
+                Admin
               </Link>
             </div>
           </div>

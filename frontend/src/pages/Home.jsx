@@ -1,4 +1,3 @@
-// frontend/src/pages/Home.jsx
 import { Link } from 'react-router-dom';
 import Slideshow from '../components/Slideshow';
 
@@ -12,9 +11,9 @@ const Home = () => {
       <section className="text-center max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-primary-700 mb-4">Our Mission</h2>
         <p className="text-xl text-gray-600 leading-relaxed">
-          To uplift underprivileged communities through sustainable development programs, 
-          education, and healthcare initiatives. We believe in creating opportunities that 
-          empower individuals to break the cycle of poverty and build better futures.
+          Blessed Foundation exists to demonstrate the love of Christ by empowering
+           disadvantaged communities and individuals through holistic support programs, community outreach, advocacy for social justice,
+            mentorship, and strategic partnerships that promote sustainable development. We are committed to creating opportunities that empower individuals to break the cycle of poverty and build better futures for themselves and their families.
         </p>
       </section>
 
